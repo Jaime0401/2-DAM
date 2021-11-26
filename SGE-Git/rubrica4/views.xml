@@ -1,0 +1,96 @@
+<odoo>
+    <record model="ir.actions.act_window" id="jugadores_list_action">
+        <field name="name">Jugadores</field>
+        <field name="res_model">jugadores</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="equipos_list_action">
+        <field name="name">Equipos</field>
+        <field name="res_model">equipos</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="titulos_list_action">
+        <field name="name">Titulos</field>
+        <field name="res_model">titulos</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="palmares_list_action">
+        <field name="name">Palmares</field>
+        <field name="res_model">palmares</field>
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+    <menuitem name="Rubrica4" id="rubrica_menu_root"/>
+        
+    <menuitem name="Jugadores" id="rubrica_menu_jugadores" parent="rubrica_menu_root"/>
+    <menuitem name="Equipos" id="rubrica_menu_equipos" parent="rubrica_menu_root"/>
+
+    <menuitem name="Listado de jugadores" id="rubrica_list_jugadores" parent="rubrica_menu_jugadores" 
+        action="jugadores_list_action"/>
+    <menuitem name="Listado de equipos" id="rubrica_list_equipos" parent="rubrica_menu_equipos" 
+        action="equipos_list_action"/>
+
+    <record model="ir.ui.view" id="jugadores_form_view">
+        <field name="name">jugadores.form</field>
+        <field name="model">jugadores</field>
+        <field name="arch" type="xml">
+            <form string="Formulario jugadores">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="apellidos"/>
+                        <field name="altura"/>
+                        <field name="equipo"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="equipos_form_view">
+        <field name="name">equipos.form</field>
+        <field name="model">equipos</field>
+        <field name="arch" type="xml">
+            <form string="Formulario equipos">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="ciudad"/>
+                        <field name="conferencia"/>
+                        <field name="jugadores">
+                            <tree>
+                                <field name="name"/>
+                                <field name="apellidos"/>
+                                <field name="altura"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="jugadores_tree">
+        <field name="name">jugadores.tree</field>
+        <field name="model">jugadores</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="apellidos"/>
+                <field name="altura"/>
+                <field name="equipo"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="equipos_tree">
+        <field name="name">equipos.tree</field>
+        <field name="model">equipos</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="ciudad"/>
+                <field name="conferencia"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

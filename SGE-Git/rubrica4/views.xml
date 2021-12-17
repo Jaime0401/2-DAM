@@ -9,16 +9,6 @@
         <field name="res_model">equipos</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <record model="ir.actions.act_window" id="titulos_list_action">
-        <field name="name">Titulos</field>
-        <field name="res_model">titulos</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-    <record model="ir.actions.act_window" id="palmares_list_action">
-        <field name="name">Palmares</field>
-        <field name="res_model">palmares</field>
-        <field name="view_mode">tree,form,calendar</field>
-    </record>
 
     <menuitem name="Rubrica4" id="rubrica_menu_root"/>
         
@@ -41,6 +31,11 @@
                         <field name="apellidos"/>
                         <field name="altura"/>
                         <field name="equipo"/>
+                        <field name="puntosp1"/>
+                        <field name="puntosp2"/>
+                        <field name="puntosp3"/>
+                        <field name="puntosp4"/>
+                        <field name="puntosp5"/>
                     </group>
                 </sheet>
             </form>
@@ -79,6 +74,12 @@
                 <field name="apellidos"/>
                 <field name="altura"/>
                 <field name="equipo"/>
+                <field name="puntosp1"/>
+                <field name="puntosp2"/>
+                <field name="puntosp3"/>
+                <field name="puntosp4"/>
+                <field name="puntosp5"/>
+                <field name="media_puntos"/>
             </tree>
         </field>
     </record>
